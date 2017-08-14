@@ -93,12 +93,34 @@ into the {body} of the default.hbs template --}}
 
 {{!-- Links to Previous/Next posts --}}
       {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-      <div class="container alert alert-secondary" role="alert">
+      <div class="alert alert-secondary" role="alert">
         <div class="row">
-          {{#next_post}}
+          {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
+          {{#prev_post}}
             <div class="col">
-              <div class="card">
+              <div class="card bg-light mb-3">
                 <div class="card-body">
+                  <a href= {{url}}>
+                    <h2 class="text-info">{{title}}</h2></a>
+                  <p class="card-text">{{excerpt words="16"}} ...</p>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <p class="card-text">author:{{author}} </div>
+                      <div class="col">
+                        <a href="{{url}}">prev </a>
+                      </div>
+                    </div>
+                  </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+          {{/prev_post}}
+          {{#next_post}}
+            <div class="col-md-6 ">
+              <div class="card bg-light mb-3">
+                <div class="card-body" >
                   <a href= {{url}}>
                     <h2 class="text-info">{{title}}</h2></a>
                   <p class="card-text">{{excerpt words="16"}} ...</p>
@@ -118,28 +140,7 @@ into the {body} of the default.hbs template --}}
               </div>
             </div>
           {{/next_post}}
-          {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-          {{#prev_post}}
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <a href= {{url}}>
-                    <h2 class="text-info">{{title}}</h2></a>
-                  <p class="card-text">{{excerpt words="16"}} ...</p>
-                  <div class="container">
-                    <div class="row">
-                      <div class="col">
-                        <p class="card-text">author:{{author}} </div>
-                      <div class="col">
-                        <a href="{{url}}">prev </a>
-                      </div>
-                    </div>
-                  </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-          {{/prev_post}}
+
         </div>
       </div>
 
