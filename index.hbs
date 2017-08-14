@@ -1,0 +1,20 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- The big featured header, it uses blog cover image as a BG if available --}}
+<!-- <header class="site-header outer {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}"> -->
+
+  {{> "site-nav"}}
+
+{{!-- The main content area --}}
+<div class="container">
+  <div class="album text-muted">
+    <div class="card-columns">
+      {{#foreach posts}}
+        {{> "post-card"}}
+      {{/foreach}}
+    </div>
+  </div>
+</div>

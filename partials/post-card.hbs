@@ -1,0 +1,15 @@
+<div class="card  border-light mb-3 p-3 ">
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="   分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["mshare","weixin","mail","evernotecn"],"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["weixin"],"viewText":"分享到：","viewSize":"24"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  {{#if feature_image}}
+     <img class="card-img-top" src="{{feature_image}}" alt="Card image cap">
+  {{/if}}
+  <div class="card-footer">
+    <a href={{url}}> <h2 class="card-title" >{{title}}</h2></a>
+    <small class="card-text">{{excerpt words="16"}} ...</small>
+    <p class="card-text">{{author}}</p>
+  </div>
+
+
+</div>
